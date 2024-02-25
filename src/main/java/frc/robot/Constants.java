@@ -99,9 +99,10 @@ public final class Constants {
 
     //placeholder numbers for beginning of season //testbed OG - 2022 old - testbed swapped - 2022 new
     public static final int ID_LEFT_FRONT = 35; //10 - 30 - 11 - 1
-    public static final int ID_RIGHT_FRONT = 1; //15 - 43 - 16 - 2 - 31 is fried now
     public static final int ID_LEFT_REAR = 34;// 11 - 44 - 10 - 3
+    public static final int ID_RIGHT_FRONT = 1; //15 - 43 - 16 - 2 - 31 is fried now
     public static final int ID_RIGHT_REAR = 32; //16 - 45 - 15 - 4
+
 
     public static final int ID_ARM = 10;
     public static final int ID_TURRET = 16; //the tested one 
@@ -152,10 +153,15 @@ public static class DriveConstants {
   public static final double MARGIN_GYRO_DRIVE = 3;
 
   //drive encoder channels
-  public static final int DIO_LDRIVE_ENC_A = 18; //was 14
-  public static final int DIO_LDRIVE_ENC_B = 19; //was 15
-  public static final int DIO_RDRIVE_ENC_A = 13;
-  public static final int DIO_RDIRVE_ENC_B = 12;
+  public static final int DIO_LDRIVE_ENC_A = 6; // 6  both robots
+  public static final int DIO_LDRIVE_ENC_B = 7; // 7  both robots
+  public static final int DIO_RDRIVE_ENC_A = 11; // 11  both robots
+  public static final int DIO_RDRIVE_ENC_B = 10; // 10  both robots
+
+  // public static final int DIO_LDRIVE_ENC_A = 18; //was 14
+  // public static final int DIO_LDRIVE_ENC_B = 19; //was 15
+  // public static final int DIO_RDRIVE_ENC_A = 13;
+  // public static final int DIO_RDIRVE_ENC_B = 12;
 
   //auto selector switches
  public static final int DIO_AUTO_1 = 0;

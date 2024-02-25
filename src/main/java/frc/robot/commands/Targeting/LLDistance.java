@@ -22,7 +22,7 @@ public class LLDistance extends Command {
   
   private double h1 = 32.5; //inches, from ground to center of camera lens
   //private double h2 = 18; // inches, same unit as d, to center of target
-  private double a1 = Math.toRadians(21); //20 degrees, camera tilt
+  private double a1 = Math.toRadians(7); //20 degrees, camera tilt
   private double dist11; // desired distance from camera to target in inches; pass into command
   //private Limelight limelight;
   private Drive drive11;

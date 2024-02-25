@@ -3,8 +3,6 @@
 // the WPILib BSD license file in the root directory of this project.
 
 package frc.robot;
-import java.util.LinkedList;
-
 import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj2.command.Command;
@@ -15,45 +13,30 @@ import edu.wpi.first.wpilibj2.command.button.Trigger;
 import frc.robot.Constants.ControllerConstants;
 import frc.robot.Constants.TurretConstants;
 import frc.robot.commands.Arm.ArmExtend;
-import frc.robot.commands.Arm.ArmPID;
 import frc.robot.commands.Arm.ArmRetract;
-import frc.robot.commands.Autos.DriveAtSetSpeed;
 import frc.robot.commands.Autos.HighBalanceAuto;
 import frc.robot.commands.Autos.MidBalanceAuto;
-import frc.robot.commands.Autos.ScoreCCRed;
 import frc.robot.commands.Autos.ScoreCCBlue;
-import frc.robot.commands.Autos.ScoreDrive;
+import frc.robot.commands.Autos.ScoreCCRed;
 import frc.robot.commands.Drive.DoubleArcadeDrive;
 import frc.robot.commands.Drive.HighGear;
 import frc.robot.commands.Drive.LowGear;
-import frc.robot.commands.Drive.ToggleTransmission;
 import frc.robot.commands.Gripper.GrabReleaseToggle;
-import frc.robot.commands.Pivot.PivotDown;
-import frc.robot.commands.Pivot.PivotPID;
-import frc.robot.commands.Pivot.PivotUp;
 import frc.robot.commands.ScoringPositions.LoadStation;
 import frc.robot.commands.ScoringPositions.Pickup;
 import frc.robot.commands.ScoringPositions.PickupToStow;
 import frc.robot.commands.ScoringPositions.ScoreHigh;
 import frc.robot.commands.ScoringPositions.ScoreHigh90;
 import frc.robot.commands.ScoringPositions.ScoreHighN90;
-import frc.robot.commands.ScoringPositions.ScoreLow;
-import frc.robot.commands.ScoringPositions.ScoreLow90;
 import frc.robot.commands.ScoringPositions.ScoreMid;
 import frc.robot.commands.ScoringPositions.ScoreMid90;
 import frc.robot.commands.ScoringPositions.ScoreMidN90;
-import frc.robot.commands.ScoringPositions.Stowe;
-import frc.robot.commands.ScoringPositions.StoweFromUP;
-import frc.robot.commands.Targeting.AprilFollow;
 import frc.robot.commands.Targeting.LLAngle;
 import frc.robot.commands.Targeting.LLDistance;
-import frc.robot.commands.Targeting.LLSideDistance;
-import frc.robot.commands.Targeting.LLTarget;
 import frc.robot.commands.Turret.TurretBrake;
 import frc.robot.commands.Turret.TurretCCW;
 import frc.robot.commands.Turret.TurretCW;
 import frc.robot.commands.Turret.TurretPID;
-import frc.robot.commands.Turret.TurretRelease;
 import frc.robot.subsystems.Arm;
 import frc.robot.subsystems.Drive;
 import frc.robot.subsystems.Gripper;
@@ -145,10 +128,10 @@ public class RobotContainer {
     lm1.onTrue(new ScoreMidN90(arm, pivot, gripper, turret));
 
    //upPov1.whileTrue(new TurretBrake(turret));
- // upPov1.whileTrue(new LLAngle(drive, 0));
-   upPov1.onTrue(new StoweFromUP(arm, pivot, turret));
-   downPov1.whileTrue(new LLSideDistance(drive, turret, 0));
-  //downPov1.whileTrue(new LLDistance(drive, 0, 40, 18));
+   upPov.whileTrue(new LLAngle(drive, 0));
+   //upPov1.onTrue(new StoweFromUP(arm, pivot, turret));
+   //downPov1.whileTrue(new LLSideDistance(drive, turret, 0));
+   downPov.whileTrue(new LLDistance(drive, 0, 40, 18));
   //downPov1.whileTrue(new Stowe(arm, pivot, turret));
    //downPov1.whileTrue(new TurretRelease(turret));
    leftPov1.whileTrue(new TurretCCW(turret, TurretConstants.TURRET_CCW_SPEED));
@@ -171,8 +154,8 @@ public class RobotContainer {
 menu.onTrue(new TurretPID(turret, 1));
 view.onTrue(new TurretBrake(turret));
 
- upPov.whileTrue(new PivotUp(pivot, 0.8));
- downPov.whileTrue(new PivotDown(pivot, 0.7));
+ //upPov.whileTrue(new PivotUp(pivot, 0.8));
+ //downPov.whileTrue(new PivotDown(pivot, 0.7));
  rightPov.whileTrue(new ArmExtend(arm, 0.75));
   leftPov.whileTrue(new ArmRetract(arm, 0.55));
   }

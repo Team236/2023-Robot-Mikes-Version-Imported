@@ -3,15 +3,13 @@
 // the WPILib BSD license file in the root directory of this project.
 
 package frc.robot;
-import org.photonvision.PhotonCamera;
 import com.kauailabs.navx.frc.AHRS;
-import edu.wpi.first.cameraserver.CameraServer;
+
 import edu.wpi.first.cscore.UsbCamera;
 import edu.wpi.first.net.PortForwarder;
 import edu.wpi.first.wpilibj.Compressor;
 import edu.wpi.first.wpilibj.PneumaticsModuleType;
 import edu.wpi.first.wpilibj.TimedRobot;
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
 /**
